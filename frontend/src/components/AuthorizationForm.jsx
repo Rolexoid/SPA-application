@@ -12,9 +12,7 @@ const AuthorizationForm = () => {
   const onSubmit = async ({ username, password }) => {
     try {
       const response = await loginUser({ username, password }).unwrap();
-      console.log(response);
       logIn(response.data);
-      console.log(localStorage.getItem('userId'));
     } catch (err) {
       console.error(err);
     }
